@@ -8,7 +8,7 @@ const Sandbox = {
 	},
 	computed: {
 		weeklyGoal(currentWeek) {
-			return teamsize * workdays * 2 * currentWeek / timeframe;
+			return this.teamsize * this.workdays * 2 * currentWeek / this.timeframe;
 		}
 	}
 }
