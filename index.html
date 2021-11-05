@@ -9,11 +9,11 @@
   Hello World
   <div id="app">
     <label for="teamsize">Teamgröße: </label>
-    <input id="teamsize" v-model="teamsize">
+    <input id="teamsize" v-model="teamsize" type="number">
     <label for="workdays">Präsenz-Arbeitstage: </label>
-    <input id="workdays" v-model="workdays">
+    <input id="workdays" v-model="workdays" type="number">
     <label for="timeframe">Challenge-Laufzeit: </label>
-    <input id="timeframe" v-model="timeframe">
+    <input id="timeframe" v-model="timeframe" type="number">
 
     <div v-for="i in timeframe">
       <span>Woche {{i}}:</span>
