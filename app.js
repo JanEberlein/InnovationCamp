@@ -5,11 +5,6 @@ const Sandbox = {
 			workdays: 5,
 			timeframe: 20
 		}
-	},
-	computed: {
-		weeklyGoal(currentWeek) {
-			return this.teamsize * this.workdays * 2 * currentWeek / this.timeframe;
-		}
 	}
 }
 

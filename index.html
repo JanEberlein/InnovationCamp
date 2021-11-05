@@ -15,9 +15,9 @@
     <label for="timeframe">Challenge-Laufzeit: </label>
     <input id="timeframe" v-model="timeframe" type="number" min="10" max="52">
 
-    <div v-for="i in timeframe">
-      <span>Woche {{i}}:</span>
-      <span>{{ weeklyGoal(i) }}</span>
+    <div v-for="currentWeek in timeframe">
+      <span>Woche {{currentWeek}}:</span>
+      <span>{{ teamsize * workdays * 2 * currentWeek / timeframe }}</span>
     </div>
   </div>
   <script src="app.js"></script>
