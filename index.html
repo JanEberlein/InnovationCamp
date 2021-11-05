@@ -6,18 +6,23 @@
   <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-  Hello World
+  YourMove 
   <div id="app">
-    <label for="teamsize">Teamgröße: </label>
-    <input id="teamsize" v-model="teamsize" type="number" min="1" max="20">
-    <label for="workdays">Präsenz-Arbeitstage: </label>
-    <input id="workdays" v-model="workdays" type="number" min="1" max="7">
-    <label for="timeframe">Challenge-Laufzeit: </label>
-    <input id="timeframe" v-model="timeframe" type="number" min="10" max="52">
-
+    <div>
+      <label for="teamsize">Teamgröße: </label>
+      <input id="teamsize" v-model="teamsize" type="number" min="1" max="20">        
+    </div>
+    <div>
+      <label for="workdays">Präsenz-Arbeitstage: </label>
+      <input id="workdays" v-model="workdays" type="number" min="1" max="7">
+    </div>
+    <div>
+      <label for="timeframe">Challenge-Laufzeit: </label>
+      <input id="timeframe" v-model="timeframe" type="number" min="10" max="52">  
+    </div>
     <div v-for="currentWeek in timeframe">
-      <span>Woche {{currentWeek}}:</span>
-      <span>{{ teamsize * workdays * 2 * currentWeek / timeframe }}</span>
+      <span>Woche {{currentWeek}}: </span>
+      <span> {{ teamsize * workdays * 2 * currentWeek / timeframe }}</span>
     </div>
   </div>
   <script src="app.js"></script>
