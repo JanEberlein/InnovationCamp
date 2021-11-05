@@ -6,11 +6,25 @@
   <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-  YourMove 
+  <h1>YourMove </h1>
+  <p>
+    Gebt einfach eure Daten unten ein und fangt sofort an eure wöchentlichen Teamziele zu erreichen. 
+    Ihr kriegt einen Punkt pro Arbeitsweg den ihr
+    <ul>
+      <li>zu Fuß</li>
+      <li>mit dem Rad</li>
+      <li>in einer Fahrgemeinschaft</li>
+      <li>im ÖPNV</li>
+      <li>auf dem E-Scooter</li>
+    </ul>
+    zurücklegt. 
+    Falls ihr selber noch andere Ideen (Einhorn, Pedalo, Bollerwagen, etc.) habt, könnt ihr dafür natürlich auch Punkte vergeben.
+    In der Zukunft könnt ihr auch euren Fortschritt hier dokumentieren :)
+  </p>
   <div id="app">
     <div>
       <label for="teamsize">Teamgröße: </label>
-      <input id="teamsize" v-model="teamsize" type="number" min="1" max="20">        
+      <input id="teamsize" v-model="teamsize" type="number" min="3" max="20">        
     </div>
     <div>
       <label for="workdays">Präsenz-Arbeitstage: </label>
@@ -22,7 +36,7 @@
     </div>
     <div v-for="currentWeek in timeframe">
       <span>Woche {{currentWeek}}: </span>
-      <span> {{ teamsize * workdays * 2 * currentWeek / timeframe }}</span>
+      <span> {{ weeklyGoal(currentWeek) }}</span>
     </div>
   </div>
   <script src="app.js"></script>
