@@ -4,40 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://unpkg.com/vue@next"></script>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <h1>YourMove </h1>
-  <p>
-    Gebt einfach eure Daten unten ein und fangt sofort an eure wöchentlichen Teamziele zu erreichen. 
-    Ihr kriegt einen Punkt pro Arbeitsweg den ihr
-    <ul>
-      <li>zu Fuß</li>
-      <li>mit dem Rad</li>
-      <li>in einer Fahrgemeinschaft</li>
-      <li>im ÖPNV</li>
-      <li>auf dem E-Scooter</li>
-    </ul>
-    zurücklegt. 
-    Falls ihr selber noch andere Ideen (Einhorn, Pedalo, Bollerwagen, etc.) habt, könnt ihr dafür natürlich auch Punkte vergeben.
-    In der Zukunft könnt ihr auch euren Fortschritt hier dokumentieren :)
-  </p>
-  <div id="app">
+<body id="app">
+  <h1 class="text-3xl text-center m-4">YourMove </h1>
+  <div class="flex flex-wrap text-justify p-4">
     <div>
-      <label for="teamsize">Teamgröße: </label>
-      <input id="teamsize" v-model="teamsize" type="number" min="3" max="20">        
+      <p class="text-justify">
+        Gebt einfach eure Daten unten ein und fangt sofort an eure wöchentlichen Teamziele zu erreichen. 
+        Ihr kriegt einen Punkt pro Arbeitsweg den ihr
+        <ul class="flex flex-col place-items-left">
+          <li class="list-item mx-4">zu Fuß</li>
+          <li class="list-item mx-4">mit dem Rad</li>
+          <li class="list-item mx-4">in einer Fahrgemeinschaft</li>
+          <li class="list-item mx-4">im ÖPNV</li>
+          <li class="list-item mx-4">auf dem E-Scooter</li>
+        </ul>
+        zurücklegt. 
+        Falls ihr selber noch andere Ideen (Einhorn, Pedalo, Bollerwagen, etc.) habt, könnt ihr dafür natürlich auch Punkte vergeben.
+        In der Zukunft könnt ihr auch euren Fortschritt hier dokumentieren :)
+      </p>
     </div>
-    <div>
-      <label for="workdays">Präsenz-Arbeitstage: </label>
-      <input id="workdays" v-model="workdays" type="number" min="1" max="7">
+    <div class="flex flex-wrap flex-col flex-grow">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-3 m-3 rounded-lg bg-blue-100">
+        <label for="teamsize">Teamgröße: </label>
+        <input class="rounded-lg p-1 px-2" id="teamsize" v-model="teamsize" type="number" min="3" max="20" placeholder="3 - 20">        
+        <label for="workdays">Präsenz-Arbeitstage: </label>
+        <input class="rounded-lg p-1 px-2" class="input" id="workdays" v-model="workdays" type="number" min="1" max="7" placeholder="1 - 7">
+        <label for="timeframe">Challenge-Laufzeit (in Wochen): </label>
+        <input class="rounded-lg p-1 px-2" id="timeframe" v-model="timeframe" type="number" min="10" max="52" placeholder="10 - 52">  
+      </div>
+      <div v-for="currentWeek in timeframe" >
+        <span>Woche {{currentWeek}}: </span>
+        <span> {{ weeklyGoal(currentWeek) }} </span>
+      </div>
     </div>
-    <div>
-      <label for="timeframe">Challenge-Laufzeit: </label>
-      <input id="timeframe" v-model="timeframe" type="number" min="10" max="52">  
-    </div>
-    <div v-for="currentWeek in timeframe">
-      <span>Woche {{currentWeek}}: </span>
-      <span> {{ weeklyGoal(currentWeek) }}</span>
-    </div>
+    
   </div>
   <script src="app.js"></script>
 </body>

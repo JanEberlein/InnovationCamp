@@ -1,4 +1,4 @@
-const Sandbox = {
+const InnovationCamp = {
 	data() {
 		return {
 			teamsize: 3,
@@ -15,4 +15,4 @@ const Sandbox = {
 	}
 }
 
-Vue.createApp(Sandbox).mount('#app')
+Vue.createApp(InnovationCamp).mount('#app')
