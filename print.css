@@ -1,0 +1,19 @@
+.no-print {
+    display : none;
+    visibility: hidden;
+}
+
+table {
+    width: 100%  !important;
+}
+
+tr {
+    width: 100%  !important;
+    size: 20pt;
+}
+
+th, td {
+    padding: 0.5rem;
+    border: 2px solid black !important;
+    font-size: 14pt;
+}

@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://unpkg.com/vue@next"></script>
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link href="print.css" rel="stylesheet" media="print" />
 </head>
 <body id="app">
-  <h1 class="text-3xl text-center m-4">YourMove </h1>
+  <h1 class="text-3xl text-center m-4 no-print">YourMove </h1>
   <div class="flex flex-wrap text-justify p-4">
-    <div>
+    <div class="no-print">
       <p class="text-justify">
         Gebt einfach eure Daten unten ein und fangt sofort an eure wöchentlichen Teamziele zu erreichen. 
         Ihr kriegt einen Punkt pro Arbeitsweg den ihr
@@ -26,7 +27,7 @@
       </p>
     </div>
     <div class="flex flex-wrap flex-col flex-grow">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-3 m-3 rounded-lg bg-blue-100">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-3 m-3 rounded-lg bg-blue-100 no-print">
         <label for="teamsize">Teamgröße: </label>
         <input class="rounded-lg p-1 px-2" id="teamsize" v-model="teamsize" type="number" min="3" max="20" placeholder="3 - 20">        
         <label for="workdays">Präsenz-Arbeitstage: </label>
@@ -34,12 +35,29 @@
         <label for="timeframe">Challenge-Laufzeit (in Wochen): </label>
         <input class="rounded-lg p-1 px-2" id="timeframe" v-model="timeframe" type="number" min="10" max="52" placeholder="10 - 52">  
       </div>
-      <div v-for="currentWeek in timeframe" >
-        <span>Woche {{currentWeek}}: </span>
-        <span> {{ weeklyGoal(currentWeek) }} </span>
-      </div>
+      
+      <button onclick="window.print();" class="no-print rounded-lg bg-blue-100 mx-3 m-1 mb-6 p-2 px-3 font-bold width-min self-start flex-grow-none">
+        Spielplan drucken
+      </button>
+      
+      <table class="table-fixed w-full text-left">
+        <span class="text-2xl font-bold mb-4">YourMove Spielplan</span>
+        <thead>
+          <tr class="">
+            <th class="w-1/3 ">Woche der Challange: </th>
+            <th class="w-1/3 ">Wochen-Ziel: </th>
+            <th class=" w-1/3">erreichte Punktzahl: </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="currentWeek in timeframe" class="">
+            <td class=""> Woche {{currentWeek}}</td>
+            <td class=""> {{ weeklyGoal(currentWeek) }} </td>
+            <td class=""></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    
   </div>
   <script src="app.js"></script>
 </body>
