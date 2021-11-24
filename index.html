@@ -9,9 +9,9 @@
   <link href="customColors.css" rel="stylesheet" />
 </head>
 <body id="app" class="bg-black text-white text-lg italic">
-  <img src="YourMove.png" class="max-h-60 object-scale-down object-top w-full p-6" alt="YourMove">
-  <div class="flex flex-wrap text-justify">
-    <div class="no-print m-4">
+  <img src="YourMove.png" class="max-h-60 object-scale-down object-top w-full p-6 bg-secondary" alt="YourMove">
+  <div class="flex flex-wrap text-justify justify-center">
+    <div class="no-print m-4 max-w-screen-lg">
       <p class="text-justify">
         Gebt einfach eure Daten unten ein und fangt sofort an eure wöchentlichen Teamziele zu erreichen. 
         Ihr kriegt <span class="text-highlight">einen Punkt</span> pro Arbeitsweg den ihr
@@ -27,9 +27,9 @@
         In der Zukunft könnt ihr auch euren Fortschritt hier dokumentieren :)
       </p>
     </div>
-    <div class="flex flex-wrap flex-col flex-grow">
-      <div class="bg-secondary p-4 my-4 max-w-full no-print">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-3 m-3 rounded-lg bg-secondary font-bold">
+    <div class="grid grid-cols-1 w-full justify-items-stretch max-w-screen-lg">
+      <div class="bg-secondary p-4 my-4 max-w-full no-print lg:align-self-start lg:rounded-lg lg:m-4 lg:p-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-3 m-3 font-bold">
           <label for="teamsize" class="text-white px-1">Teamgröße: </label>
           <input class="rounded-full p-1 px-4 text-black font-bold" id="teamsize" v-model="teamsize" type="number" min="3" max="20" placeholder="3 - 20">        
           <label for="workdays" class="text-white px-1">Präsenz-Arbeitstage: </label>
@@ -42,10 +42,10 @@
           Spielplan drucken
         </button>
       </div>
-      <table class="table-fixed text-left max-w-full m-4">
-        <span class="text-2xl font-bold m-4 mt-0 max-w-full">YourMove Spielplan</span>
+      <table class="table-fixed text-left w-full m-4">
+        <caption class="text-left text-2xl font-bold mb-4">YourMove Spielplan</caption>
         <thead>
-          <tr class="max-w-full">
+          <tr class="max-w-full min-w-full">
             <th class="">Woche der Challange: </th>
             <th class="">Wochen-Ziel: </th>
             <th class="">erreichte Punktzahl: </th>
