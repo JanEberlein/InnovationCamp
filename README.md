@@ -1,2 +1,2 @@
-# InnovationCamp
-wir haben noch keinen ordentlichen Namen. Und was das hier wird wissen auch nur so halb.
+# YourMove
+Spielerisch im Team den eigenen Mobilitäts-Schweinehund überwinden
