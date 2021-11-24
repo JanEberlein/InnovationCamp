@@ -1,0 +1,12 @@
+.bg-primary {
+    background: #FBFF12;
+}
+
+.bg-secondary {
+    background: #FF206E;
+}
+
+.text-highlight {
+    color: #FBFF12;
+    font-weight: bold;
+}

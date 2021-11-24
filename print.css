@@ -3,17 +3,33 @@
     visibility: hidden;
 }
 
+thead {
+    display:table-header-group;
+}
+
+tfoot { 
+    display:table-footer-group;
+}
+
 table {
-    width: 100%  !important;
+    height: 80%;
+    page-break-inside:auto
 }
 
 tr {
     width: 100%  !important;
     size: 20pt;
+    page-break-inside:avoid; 
+    page-break-after:auto
 }
 
 th, td {
     padding: 0.5rem;
     border: 2px solid black !important;
     font-size: 14pt;
+}
+
+body {
+    background: white !important;
+    color: black !important;
 }
